@@ -1,0 +1,23 @@
+{
+  "name": "akibot-log",
+  "version": "0.1.0",
+  "description": "Very simple logger utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makimenko/akibot-log.git"
+  },
+  "keywords": [
+    "logger",
+    "typescript"
+  ],
+  "author": "Mihails Akimenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/makimenko/akibot-log/issues"
+  },
+  "homepage": "https://github.com/makimenko/akibot-log#readme"
+}
