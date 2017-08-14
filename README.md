@@ -1,7 +1,6 @@
 # AkiBot Logger
-Sub-project of https://github.com/makimenko/akibot.git
-Tried to find out some simple typescript logger, and not suceeded.
-At the end, created very simple and limited sync logger.
+Sub-project of https://github.com/makimenko/akibot.git<br>
+Very simple and limited sync logger for typescript.
 
 ## Installation
 1. Add dependency
