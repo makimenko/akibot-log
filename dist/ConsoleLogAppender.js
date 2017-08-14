@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const LogLevel_1 = require("./LogLevel");
-class ConsoleAppender {
+class ConsoleLogAppender {
     append(logLevel, name, msg) {
         // TODO: make it configurable
         var now = new Date();
@@ -13,5 +13,5 @@ class ConsoleAppender {
             + ": " + msg);
     }
 }
-exports.ConsoleAppender = ConsoleAppender;
+exports.ConsoleLogAppender = ConsoleLogAppender;
 //# sourceMappingURL=ConsoleLogAppender.js.map

@@ -1,7 +1,7 @@
 import { LogAppender } from "./LogAppender";
 import { LogLevel } from "./LogLevel";
 
-export class ConsoleAppender implements LogAppender {
+export class ConsoleLogAppender implements LogAppender {
 
     append(logLevel: LogLevel, name: string, msg: string): void {
         // TODO: make it configurable
