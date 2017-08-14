@@ -1,24 +1,15 @@
 import { LogLevel } from "./LogLevel";
+import { LogAppender } from "./LogAppender";
 
 export class Logger {
 
-    constructor(private name: string, private logLevel: LogLevel) {
+    constructor(private name: string, private logLevel: LogLevel, private logAppender: LogAppender) {
 
     }
 
     private print(logLevel: LogLevel, msg: string) {
         if (logLevel >= this.logLevel) {
-            var now = new Date();
-            
-            // TODO: Make it configurable
-            console.log(
-                ("  " + now.toLocaleString()).slice(-19)
-                + ": "
-                + ("     " + LogLevel[logLevel]).slice(-5)
-                + ": "
-                + (this.name + "                                  ").substring(0, 25)
-                + ": " + msg
-            );
+            this.logAppender.append(logLevel, this.name, msg);
         }
     }
 

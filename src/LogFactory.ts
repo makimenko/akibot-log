@@ -1,10 +1,11 @@
 import { LogRule } from "./LogRule";
 import { LogLevel } from "./LogLevel";
 import { Logger } from "./Logger";
+import { LogAppender } from "./LogAppender";
 
 export class LogFactory {
 
-    constructor(private logRules: LogRule[]) {
+    constructor(private logAppender: LogAppender, private logRules: LogRule[]) {
 
     }
 
@@ -20,7 +21,7 @@ export class LogFactory {
 
     public getLogger(name: string) {
         var level = this.getLoglevel(name);
-        return new Logger(name, level);
+        return new Logger(name, level, this.logAppender);
     }
 
 }

@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const LogLevel_1 = require("./LogLevel");
 const Logger_1 = require("./Logger");
 class LogFactory {
-    constructor(logRules) {
+    constructor(logAppender, logRules) {
+        this.logAppender = logAppender;
         this.logRules = logRules;
     }
     getLoglevel(name) {
@@ -17,7 +18,7 @@ class LogFactory {
     }
     getLogger(name) {
         var level = this.getLoglevel(name);
-        return new Logger_1.Logger(name, level);
+        return new Logger_1.Logger(name, level, this.logAppender);
     }
 }
 exports.LogFactory = LogFactory;

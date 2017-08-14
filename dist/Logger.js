@@ -2,20 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const LogLevel_1 = require("./LogLevel");
 class Logger {
-    constructor(name, logLevel) {
+    constructor(name, logLevel, logAppender) {
         this.name = name;
         this.logLevel = logLevel;
+        this.logAppender = logAppender;
     }
     print(logLevel, msg) {
         if (logLevel >= this.logLevel) {
-            var now = new Date();
-            // TODO: Make it configurable
-            console.log(("  " + now.toLocaleString()).slice(-19)
-                + ": "
-                + ("     " + LogLevel_1.LogLevel[logLevel]).slice(-5)
-                + ": "
-                + (this.name + "                                  ").substring(0, 25)
-                + ": " + msg);
+            this.logAppender.append(logLevel, this.name, msg);
         }
     }
     trace(msg) {
