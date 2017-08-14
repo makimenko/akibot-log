@@ -1,6 +1,7 @@
 {
   "name": "akibot-log",
   "version": "0.1.0",
+  "private" : false,
   "description": "Very simple logger utility",
   "main": "index.js",
   "scripts": {
