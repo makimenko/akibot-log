@@ -1,5 +1,6 @@
 import { LogRule } from "./LogRule";
 import { LogLevel } from "./LogLevel";
+import { Logger } from "./Logger";
 
 export class LogFactory {
 
