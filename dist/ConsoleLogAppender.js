@@ -30,7 +30,7 @@ class ConsoleLogAppender {
     append(logLevel, name, msg) {
         // TODO: make it configurable
         var now = new Date();
-        console.log(this.FgYellow
+        console.log((logLevel >= LogLevel_1.LogLevel.Error ? this.FgRed : this.FgYellow)
             + ("  " + now.toLocaleString()).slice(-19)
             + ": "
             + ("     " + LogLevel_1.LogLevel[logLevel]).slice(-5)
@@ -38,7 +38,9 @@ class ConsoleLogAppender {
             + (name + "                                  ").substring(0, 25)
             + ": "
             + this.Reset
-            + msg);
+            + (logLevel >= LogLevel_1.LogLevel.Error ? this.FgRed : "")
+            + msg
+            + (logLevel >= LogLevel_1.LogLevel.Error ? this.Reset : ""));
     }
 }
 exports.ConsoleLogAppender = ConsoleLogAppender;

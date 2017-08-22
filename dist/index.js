@@ -7,4 +7,5 @@ __export(require("./LogFactory"));
 __export(require("./Logger"));
 __export(require("./LogLevel"));
 __export(require("./ConsoleLogAppender"));
+__export(require("./ChromeLogAppender"));
 //# sourceMappingURL=index.js.map
