@@ -3,7 +3,7 @@ import { LogLevel } from "./LogLevel";
 
 export class ChromeLogAppender implements LogAppender {
 
-    FgRed = 'color: red;';
+    FgRed = 'color: white; background:#ffcccc';
     FgYellow = 'color: #cccc00;';
     Default = 'color: #663300;';
 
@@ -11,7 +11,7 @@ export class ChromeLogAppender implements LogAppender {
         // TODO: make it configurable
         var now = new Date();
         var consoleMessage : string = 
-            + '%c'
+             "%c"
             + ("  " + now.toLocaleString()).slice(-19)
             + ": "
             + ("     " + LogLevel[logLevel]).slice(-5)
@@ -23,12 +23,9 @@ export class ChromeLogAppender implements LogAppender {
 
         console.log(
             consoleMessage
-            ,'color:red'
-            ,'color:green'
+            , (logLevel >= LogLevel.Error ? this.FgRed : this.FgYellow)
+            , (logLevel >= LogLevel.Error ? this.FgRed : this.Default)
         );
-
-//                    , (logLevel >= LogLevel.Error ? this.FgRed : this.FgYellow)
-            //, (logLevel >= LogLevel.Error ? this.FgRed : this.Default)
     }
 
 }
