@@ -53,3 +53,6 @@ export class Sample {
  2017-8-14 21:34:44: Debug: GyroscopeComponent       : onGyroscopeMode: 0
  2017-8-14 21:34:44:  Info: sandbox                  : Orientation SUCEEDED! Final angle is: 111.53946624189192
  ```
+
+## Use Color logs in Chrome and Firefox
+If you want to print color logs in Chrome or Firefox, please use ConsoleLogAppender (instead of ConsoleLogAppender)
