@@ -1,8 +1,8 @@
 import { LogLevel } from "./LogLevel";
 import { LogAppender } from "./LogAppender";
 export declare class Logger {
-    private name;
-    private logLevel;
+    name: string;
+    logLevel: LogLevel;
     private logAppender;
     constructor(name: string, logLevel: LogLevel, logAppender: LogAppender);
     private print(logLevel, msg);

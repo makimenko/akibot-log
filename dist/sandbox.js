@@ -20,6 +20,12 @@ logger2.debug("this is debug message");
 logger2.error("this is error message");
 logger2.info("this is info message");
 logger1.info("this is info message");
+rules.push({
+    pattern: new RegExp("MyComponent1"),
+    logLevel: index_1.LogLevel.Trace
+});
+logFactory.updateLogRules(rules);
+logger1.trace("this is trace message (after logRules adjustments)");
 const logFactory2 = new index_1.LogFactory(new index_1.ChromeLogAppender(), rules);
 var logger3 = logFactory2.getLogger("ChromeComponent");
 logger3.error("Error message");

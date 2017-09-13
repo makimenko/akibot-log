@@ -4,8 +4,10 @@ import { Logger } from "./Logger";
 import { LogAppender } from "./LogAppender";
 export declare class LogFactory {
     private logAppender;
-    private logRules;
+    logRules: LogRule[];
+    private loggers;
     constructor(logAppender: LogAppender, logRules: LogRule[]);
     getLoglevel(name: string): LogLevel;
     getLogger(name: string): Logger;
+    updateLogRules(newLogRules: LogRule[]): void;
 }

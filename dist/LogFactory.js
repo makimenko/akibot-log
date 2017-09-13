@@ -6,6 +6,7 @@ class LogFactory {
     constructor(logAppender, logRules) {
         this.logAppender = logAppender;
         this.logRules = logRules;
+        this.loggers = [];
     }
     getLoglevel(name) {
         var result = LogLevel_1.LogLevel.Error;
@@ -18,7 +19,13 @@ class LogFactory {
     }
     getLogger(name) {
         var level = this.getLoglevel(name);
-        return new Logger_1.Logger(name, level, this.logAppender);
+        var logger = new Logger_1.Logger(name, level, this.logAppender);
+        this.loggers.push(logger);
+        return logger;
+    }
+    updateLogRules(newLogRules) {
+        this.logRules = newLogRules;
+        this.loggers.forEach((l) => l.logLevel = this.getLoglevel(l.name));
     }
 }
 exports.LogFactory = LogFactory;

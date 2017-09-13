@@ -3,7 +3,7 @@ import { LogAppender } from "./LogAppender";
 
 export class Logger {
 
-    constructor(private name: string, private logLevel: LogLevel, private logAppender: LogAppender) {
+    constructor(public name: string, public logLevel: LogLevel, private logAppender: LogAppender) {
 
     }
 
