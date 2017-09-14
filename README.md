@@ -55,4 +55,4 @@ export class Sample {
  ```
 
 ## Use Color logs in Chrome and Firefox
-If you want to print color logs in Chrome or Firefox, please use ConsoleLogAppender (instead of ConsoleLogAppender)
+If you want to spool the color logs in Chrome or Firefox, please use ConsoleLogAppender (instead of LogAppender).
